@@ -1,0 +1,1 @@
+export { SentryErrorPlugin } from './SentryErrorPlugin';

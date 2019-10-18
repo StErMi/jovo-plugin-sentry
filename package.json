@@ -1,0 +1,36 @@
+{
+  "name": "jovo-plugin-sentry",
+  "version": "0.0.1",
+  "description": "Logs errors of your Jovo application to Sentry",
+  "main": "dist/src/index",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "tsc": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "jovo",
+    "alexa",
+    "google",
+    "assistant",
+    "typescript",
+    "javascript",
+    "chatbot"
+  ],
+  "author": "Emanuele Ricci <stermi@gmail.com>",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/node": "^10.3.1",
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.4"
+  },
+  "dependencies": {
+    "@sentry/node": "^5.7.1",
+    "@types/lodash.merge": "^4.6.6",
+    "jovo-core": "^2.2.13",
+    "lodash.merge": "^4.6.2"
+  },
+  "files": [
+    "dist/src/**/*"
+  ]
+}
