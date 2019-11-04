@@ -6,7 +6,7 @@ export interface Config extends PluginConfig {
     dsn: string,
 }
 
-export class RavenErrorPlugin implements Plugin {
+export class SentryErrorPlugin implements Plugin {
 
     // default config
     config: Config = {
@@ -56,6 +56,9 @@ export class RavenErrorPlugin implements Plugin {
                 if( log.intent ) scope.setTag('intent', log.intent);
                 scope.setTag('state', log.state);
                 
+                scope.setExtra('request', log.request);
+                scope.setExtra('session', log.session);
+                
                 scope.setUser({ id: log.userId });
             });
             Sentry.captureException(handleRequest.error);
@@ -72,6 +75,8 @@ export class RavenErrorPlugin implements Plugin {
         }
         const data = {
             error: handleRequest.error!,
+            session: handleRequest.jovo.getSessionAttributes(),
+            request: handleRequest.jovo.$request!,
             stackTrace: handleRequest.error!.stack,
             userId: handleRequest.jovo.$user!.getId(),
             timestamp: handleRequest.jovo.$request!.getTimestamp(),
