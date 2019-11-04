@@ -1,6 +1,6 @@
 {
   "name": "jovo-plugin-sentry",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Logs errors of your Jovo application to Sentry",
   "main": "dist/src/index",
   "types": "dist/src/index.d.ts",
